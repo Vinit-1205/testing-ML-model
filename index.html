@@ -1,13 +1,13 @@
-<!DOCTYPE html>
+<!doctype html>
 <!-- Declares this is an HTML5 document -->
 
 <html>
-<head>
-    <title>Mood Detector</title>
+  <head>
+    <title>mood Detector</title>
     <!-- This title appears on the browser tab -->
-</head>
+  </head>
 
-<body style="text-align:center; margin-top:50px; font-family:Arial;">
+  <body style="text-align: center; margin-top: 50px; font-family: Arial">
     <!-- Body contains all visible content on the webpage -->
 
     <h2>🤖 My Smart Page</h2>
@@ -15,8 +15,8 @@
 
     <!-- Input box where user types text -->
     <input type="text" id="text" placeholder="Type something..." />
-    
-    <br><br>
+
+    <br /><br />
     <!-- Adds space between elements -->
 
     <!-- Button that triggers a function when clicked -->
@@ -26,36 +26,30 @@
     <p id="result"></p>
 
     <script>
-        // Function runs when button is clicked
-        function checkMood() {
+      // Function runs when button is clicked
+      function checkMood() {
+        // Get the text entered by user
+        let text = document.getElementById("text").value.toLowerCase();
 
-            // Get the text entered by user
-            let text = document.getElementById("text").value.toLowerCase();
+        // Variable to store result
+        let result = "";
 
-            // Variable to store result
-            let result = "";
-
-            // Check if input contains certain words
-            if (text.includes("happy")) {
-                result = "😊 You seem happy!";
-            } 
-            else if (text.includes("sad")) {
-                result = "😢 You seem sad!";
-            } 
-            else if (text.includes("Hungry")) {
-                result = "😢 You seem Hungry!";
-            } 
-            else if (text.includes("Sleepy")) {
-                result = "😢 You seem Sleepy!";
-            } 
-            else {
-                result = "🤔 I am not sure!";
-            }
-
-            // Display result on webpage
-            document.getElementById("result").innerText = result;
+        // Check if input contains certain words
+        if (text.includes("happy")) {
+          result = "😊 You seem happy!";
+        } else if (text.includes("sad")) {
+          result = "😢 You seem sad!";
+        } else if (text.includes("hungry")) {
+          result = "😋 You seem hungry!";
+        } else if (text.includes("sleepy")) {
+          result = "😴 You seem sleepy!";
+        } else {
+          result = "🤔 I am not sure!";
         }
-    </script>
 
-</body>
+        // Display result on webpage
+        document.getElementById("result").innerText = result;
+      }
+    </script>
+  </body>
 </html>
